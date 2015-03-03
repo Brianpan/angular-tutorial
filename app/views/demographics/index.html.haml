@@ -1,0 +1,22 @@
+.d3
+  %svg#tw-map
+:css
+  #tw-map{
+    height: 960px;
+    width: 800px;
+  }  
+:javascript
+  $(document).ready(function(){
+    d3.json("twgeo.json", function(error, data){
+      topo = topojson.feature(data, data.objects["twCounty2010.geo"]);
+      prj = d3.geo.mercator().center([120.979531, 23.978567]).scale(50000);
+
+      path = d3.geo.path().projection(prj);
+
+      locks = d3.select("svg#tw-map").selectAll("path").data(topo.features).enter().append("path").attr("d", path);
+    });
+
+
+    
+  });
+
