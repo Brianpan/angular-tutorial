@@ -2,12 +2,14 @@
 %html
 %head
   %title Demographic
-  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true 
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  = yield :morecss 
   = javascript_include_tag :modernizr
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true 
+  = yield :morejs
   = csrf_meta_tags
 
 %body
-  = javascript_include_tag 'application', 'data-turbolinks-track' => true 
   .container
     = yield 
 

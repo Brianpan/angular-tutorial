@@ -24,6 +24,7 @@
 //= require demographic/stellar
 //= require demographic/jquery.appear
 //= require demographic/validate
-//= require demographic/d3.v3.min
+//= require demographic/mosaic.1.0.1
 //= require topojson
+//= require demographic/d3.v3.min
 //= require_tree .

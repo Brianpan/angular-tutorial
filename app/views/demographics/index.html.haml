@@ -1,43 +1,55 @@
+- content_for :morecss do 
+  = stylesheet_link_tag "demographic"
 .row
-  .col-md-8
+  .col-md-12
     .d3
       %svg#tw-map
+.clearfix      
 
-:css
-  #tw-map{
-    height: 960px;
-    width: 800px;
-  } 
-  path{
-    stroke-width: 0.5px;
-  } 
+.row  
+  .isotope 
+    - (0..0).each do |i|
+      .col-md-4
+        .mediafield.isotopeitem{style: "min-width: 100px; max-width: 300px; width: 100%; "}
+          .mosaic-block.mosaic
+            .tag 新北市xx
+            
+            = link_to("", class: "mosaic-overlay link") do 
+              .contents
+                %h4{style: "margin-bottom: 0;"} 淡水
+                %article
+                  這是一個地靈人傑的好地方  
+            .mosaic-backdrop
+              .corner 2015/3/8
+              = image_tag("shana.jpg", style: "height: 100%;")          
+          
+
 :javascript
   $(document).ready(function(){
-    d3.json("twgeo.json", function(error, data){
-      topo = topojson.feature(data, data.objects["twCounty2010.geo"]);
-      prj = d3.geo.mercator().center([120.979531, 23.978567]).scale(50000);
-
-      path = d3.geo.path().projection(prj);
-      alert(JSON.stringify(topo))
-      locks = d3.select("svg#tw-map").selectAll("path").data(topo.features).enter().append("path").attr("d", path)
-      .style("stroke", "purple")
-      .attr("id", function(d){return d.properties.COUNTYSN})
-      .on("click", countyclick);
-      for(i = 0; i < topo.features.length; i ++ ) {
-        topo.features[i].properties.value = Math.random()*1000000;
-        console.log(topo.features[i].properties.value);
-      }
-      colorMap = d3.scale.linear().domain([0, 500000]).range(["#000","#f00"]);
-      locks.attr("fill", function(it){
-        return colorMap(it.properties.value);
+    $(window).load(function(){
+      d3.json("twgeo.json", function(error, data){
+        topo = topojson.feature(data, data.objects["twCounty2010.geo"]);
+        prj = d3.geo.mercator().center([120.979531, 23.978567]).scale(50000);
+        path = d3.geo.path().projection(prj);
+        locks = d3.select("svg#tw-map").selectAll("path").data(topo.features).enter().append("path").attr("d", path)
+        .style("stroke", "purple")
+        .attr("id", function(d){return d.properties.COUNTYSN})
+        .on("click", countyclick);
+        for(i = 0; i < topo.features.length; i ++ ) {
+          topo.features[i].properties.value = Math.random()*1000000;
+          console.log(topo.features[i].properties.value);
+        }
+        colorMap = d3.scale.linear().domain([0, 500000]).range(["#000","#f00"]);
+        locks.attr("fill", function(it){
+          return colorMap(it.properties.value);
+        });
+        
+        function countyclick(d){
+          alert(JSON.stringify(d.properties.COUNTYNAME));
+        }
       });
-      
-      function countyclick(d){
-        alert(JSON.stringify(d.properties.COUNTYNAME));
-      }
+      $(".mosaic").mosaic({opacity: 0.7});
     });
-
-
     
   });
   ///REFERENCE:
