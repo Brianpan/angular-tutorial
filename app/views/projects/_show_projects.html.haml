@@ -1,10 +1,10 @@
-%table.table{"ng-show" => "{{main.projects.count > 0}}"}
+%table.table{"ng-controller" => "MainController as main"}
   %tr
     %th Name
     %th URL
     %th Power
     %th Edit
-  .list{"ng-repeat" => "project in main.projects.projects"}
+  .list{"ng-repeat" => "project in main.projects"}
     %tr
       %td
         {{project.name}}

@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+projects = Project.create([{name: "angular.js", url: "http://www.angular.com", power: "1000"},
+	{name: "rails", url: "https://rubyonrails.org", power: "100000"}])

@@ -1,6 +1,6 @@
 .row
   .col-md-8
-    %form{name: "projectForm", class: "horizontal-form", "ng-controller" => "NewController as new", "ng-submit" => "projectForm.$valid && new.addProject(main)"}
+    %form{name: "projectForm", class: "horizontal-form", "ng-controller" => "NewController as new", "ng-submit" => "projectForm.$valid && new.addProject()"}
       .form-group
         = label_tag "Name"
         = text_field_tag :name, "", class: "form-control", required: true, "ng-model" => "new.project.name"

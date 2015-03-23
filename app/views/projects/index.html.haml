@@ -6,11 +6,23 @@
     %li{"ng-class" => "{active:panel.isTab(2)}"}
       %a{href: "", "ng-click" => "panel.setTab(2)"}
         New
-  .main{"ng-controller" => "MainController as main"} 
+  .main{"ng-controller" => "MainController as main"}
     .panel{"ng-show" => "panel.isTab(1)"}
       %h3 Projects
-      
-      = render "show_projects"
+      %table.table
+        %tr
+          %th Name
+          %th URL
+          %th Power
+          %th Edit
+          %th Destroy
+        %tbody{"ng-repeat" => "project in projects"}
+          %tr
+            %td {{project.name}}
+            %td {{project.url}}
+            %td {{project.power}}
+            %td 
+            %td
     .panel{"ng-show" => "panel.isTab(2)"}
       %h3 New Form
       = render "form_details"
