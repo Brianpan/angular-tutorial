@@ -9,8 +9,8 @@
   .main{"ng-controller" => "MainController as main"} 
     .panel{"ng-show" => "panel.isTab(1)"}
       %h3 Projects
-      %div{"ng-view"}
-      / = render "show_projects"
+      
+      = render "show_projects"
     .panel{"ng-show" => "panel.isTab(2)"}
       %h3 New Form
       = render "form_details"

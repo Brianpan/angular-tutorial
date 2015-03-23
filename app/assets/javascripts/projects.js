@@ -1,5 +1,5 @@
 (function(){
-  var app = angular.module("project", ['ngRoute']);
+  var app = angular.module("project", []);
   app.config
   ///main controller
   app.controller("MainController", function(){
@@ -29,7 +29,6 @@
     this.addProject = function(main){
       main.projects.projects.push(this.project);
       main.addCount();
-      alert(main.projects.count);
     };
     this.project = {};
   });
