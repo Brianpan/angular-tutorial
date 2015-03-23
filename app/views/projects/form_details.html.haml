@@ -1,0 +1,15 @@
+.row
+  .col-md-8
+    %h2 Form
+    %form{class: "horizontal-form"}
+      .form-group
+        = label_tag "Name"
+        = text_field_tag :name, "", class: "form-control", required: true
+      .form-group
+        = label_tag "URL"
+        = text_field_tag :url, "", class: "form-control", required: true
+      .form-group
+        = label_tag "Power"
+        = text_field_tag :power, "", class: "form-control", required: true
+      .pull-right
+        = submit_tag "Submit", class: "btn btn-info"      

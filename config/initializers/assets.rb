@@ -11,4 +11,6 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( 
 	demographic/*.css
 	demographic/*js
-	demographic.css )
+	demographic.css
+	projects.js
+	font.css )

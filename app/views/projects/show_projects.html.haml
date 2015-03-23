@@ -1,0 +1,14 @@
+%table.table{"ng-show" => "{{main.projects.count > 0}}"}
+  %tr
+    %th Name
+    %th URL
+    %th Power
+    %th Edit
+  .list{"ng-repeat" => "project in main.projects.projects"}
+    %tr
+      %td
+        {{project.name}}
+      %td
+        {{project.url}}
+      %td
+        {{project.power}}  

@@ -1,3 +1,17 @@
+h3{
+  font-style: "chunkfiveregular";
+}
+.btn{
+  border-radius: 0px;
+}
+.media{
+  min-height: 100px;
+  .btn-list{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
 article{
     color: #000; 
   }
@@ -45,3 +59,7 @@ path{
   background-color: #fff;
   box-shadow: 3px 3px 2px #BDBDBD;
 }
+
+body{
+  background-color: #e9eaed;
+}  

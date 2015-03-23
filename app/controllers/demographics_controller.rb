@@ -9,4 +9,7 @@ class DemographicsController < ApplicationController
       format.json{render json: twgeo_json}
     end	
   end	
+  def testajax
+    render json: {test: "success!"}
+  end	
 end

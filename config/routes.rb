@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   resources :demographics
   root 'demographics#index'
   get "twgeo" => "demographics#twgeo", as: "twgeo"
+  get "testajax" => "demographics#testajax", as: "testajax"
+
+  get "projects" => "projects#index", as: "projects"
+  get "form_details" => "projects#form_details", as: "form"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

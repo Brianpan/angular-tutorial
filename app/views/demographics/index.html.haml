@@ -1,31 +1,36 @@
 - content_for :morecss do 
   = stylesheet_link_tag "demographic"
 .row
-  .col-md-12
+  .col-md-6
     .d3
       %svg#tw-map
 .clearfix      
 
-.row  
-  .isotope 
-    - (0..0).each do |i|
-      .col-md-4
-        .mediafield.isotopeitem{style: "min-width: 100px; max-width: 300px; width: 100%; "}
-          .mosaic-block.mosaic
-            .tag 新北市xx
-            
-            = link_to("", class: "mosaic-overlay link") do 
-              .contents
-                %h4{style: "margin-bottom: 0;"} 淡水
-                %article
-                  這是一個地靈人傑的好地方  
-            .mosaic-backdrop
-              .corner 2015/3/8
-              = image_tag("shana.jpg", style: "height: 100%;")          
+.row
+  .col-md-9  
+    .isotope 
+      - (0..0).each do |i|
+        .col-md-4
+          .mediafield.isotopeitem{style: "min-width: 100px; max-width: 300px; width: 100%; "}
+            .mosaic-block.mosaic
+              .tag 新北市
+              .mosaic-backdrop
+                .corner 2015/3/8
+                = image_tag("page1.jpg", style: "height: 100%;")
+                .media
+                  .media-left
+                  .media-body
+                    %h4 Run for Good 每周五公里
+                    .btn-list
+                      .btn.btn-primary 查看詳情
+                      .btn.btn-success 我要參加          
           
-
+  .col-md-3
+    = render "search_list"
 :javascript
   $(document).ready(function(){
+  
+
     $(window).load(function(){
       d3.json("twgeo.json", function(error, data){
         topo = topojson.feature(data, data.objects["twCounty2010.geo"]);

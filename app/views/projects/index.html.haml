@@ -1,0 +1,16 @@
+%section{"ng-controller" => "PanelController as panel", "ng-init" => "tab = 1"}
+  %ul.nav.nav-pills
+    %li{"ng-class" => "{active:panel.isTab(1)}"}
+      %a{href: "", "ng-click" => "panel.setTab(1)"}
+        List All
+    %li{"ng-class" => "{active:panel.isTab(2)}"}
+      %a{href: "", "ng-click" => "panel.setTab(2)"}
+        New
+  .main{"ng-controller" => "MainController as main"} 
+    .panel{"ng-show" => "panel.isTab(1)"}
+      %h3 Projects
+      %div{"ng-view"}
+      / = render "show_projects"
+    .panel{"ng-show" => "panel.isTab(2)"}
+      %h3 New Form
+      = render "form_details"

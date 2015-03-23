@@ -13,6 +13,10 @@ gem 'autoprefixer-rails'
 gem "font-awesome-rails"
 gem 'modernizr-rails'
 gem 'skrollr-rails'
+
+##search and paginate
+gem 'kaminari'
+gem 'ransack'
 ##d3
 gem "d3-rails"
 gem 'topojson-rails', git: "https://github.com/bai/topojson-rails.git"
@@ -44,6 +48,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+## angularjs
+gem 'angularjs-rails'
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
 

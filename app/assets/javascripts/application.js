@@ -27,4 +27,5 @@
 //= require demographic/mosaic.1.0.1
 //= require topojson
 //= require demographic/d3.v3.min
+//= require angular 
 //= require_tree .
