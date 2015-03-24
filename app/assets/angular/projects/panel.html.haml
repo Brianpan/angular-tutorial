@@ -10,21 +10,21 @@
     
   .panel{"ng-show" => "panel.isTab(1)"}
     %h3 Projects
+    .pull-left
+      %input{type: "text", "ng-model" => "search", class: "form-control", placeholder: "Search"}
     %table.table
       %tr
         %th Name
         %th URL
         %th Power
         %th Edit
-        %th Destroy
-      %tbody{"ng-repeat" => "project in projects"}
+      %tbody{"ng-repeat" => "project in projects | filter:search | orderBy: 'name'"}
         %tr
           %td {{project.name}}
           %td {{project.url}}
           %td {{project.power}}
           %td 
             %a{"ng-href" => "#/projects/edit/{{project.id}}"} click me
-          %td
   .panel{"ng-show" => "panel.isTab(2)"}
     %h3 New Form
     

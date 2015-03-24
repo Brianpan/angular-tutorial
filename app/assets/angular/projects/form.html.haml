@@ -14,3 +14,10 @@
       .pull-right
         %button{"ng-click" => "editProject()", class: "btn btn-info"}
           Submit
+    
+    .pull-right      
+      %button{"ng-click" => "returnProjects()", class: "btn btn-default"}
+        Return  
+    .pull-left
+      %button{"ng-click" => "destroyProject()", class: "btn btn-warning"}
+        Delete

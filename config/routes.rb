@@ -7,13 +7,20 @@ Rails.application.routes.draw do
  
   get "twgeo" => "demographics#twgeo", as: "twgeo"
   get "testajax" => "demographics#testajax", as: "testajax"
-  
-  resources :projects, except: [:show]
-  put "update_projects" => "projects#update", as: "update_projects"
-  root 'projects#index'
-  get "form_details" => "projects#form_details", as: "form"
+   
+  resources :projects, only: [:index]
   get "project_list" => "projects#project_list", as: "project_list"
+  root 'projects#index'
+  namespace :api do 
+    resources :projects, only: [:create, :update, :destroy]
+    get "project_list" => "projects#project_list", as: "project_list"
+  end
+  ##put this last
   get '*path' => 'projects#index'
+
+  
+  
+
   # get '*path' => 'projects#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
