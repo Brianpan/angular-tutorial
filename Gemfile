@@ -1,3 +1,4 @@
+ruby '2.1.5'
 source 'https://rubygems.org'
 
 
@@ -56,7 +57,7 @@ gem 'rack-cors', :require => 'rack/cors'
 ##heroku deploy
 # gem "rails_12factors", group: :production
 gem "pg"
-
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
