@@ -52,6 +52,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'angularjs-rails'
 gem 'angular-rails-templates'
 gem 'rack-cors', :require => 'rack/cors'
+
+##heroku deploy
+# gem "rails_12factors", group: :production
+gem "pg"
+
+
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
 
