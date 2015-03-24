@@ -1,0 +1,16 @@
+.row
+  .col-md-8
+    %h2 Form
+    %form{name: "projectForm", class: "horizontal-form"}
+      .form-group
+        %label Name
+        %input#name.form-control{name: "name", type: "text", required: true, "ng-model" => "project.name"}
+      .form-group
+        %label URL
+        %input#url.form-control{name: "url", type: "url", required: true, "ng-model" => "project.url"}
+      .form-group
+        %label Power
+        %input#power.form-control{name: "power", type: "text", required: true, "ng-model" => "project.power"}
+      .pull-right
+        %button{"ng-click" => "editProject()", class: "btn btn-info"}
+          Submit

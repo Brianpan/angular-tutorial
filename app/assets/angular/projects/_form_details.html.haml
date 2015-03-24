@@ -1,0 +1,20 @@
+.row
+  .col-md-8
+    %form{name: "projectForm", class: "horizontal-form", "ng-controller" => "NewController as new", "ng-submit" => "projectForm.$valid && new.addProject()"}
+      .form-group
+        %label Name
+        %input#name.form-control{name: "name", type: "text", required: true, "ng-model" => "project.name"}
+      .form-group
+        %label URL
+        %input#url.form-control{name: "url", type: "url", required: true, "ng-model" => "project.url"}
+      .form-group
+        %label Power
+        %input#power.form-control{name: "power", type: "text", required: true, "ng-model" => "project.power"}
+      .pull-right
+        %input{type: "submit", name: "submit", value: "submit", class: "btn btn-success"}
+        
+
+:css
+  .ng-invalid.ng-dirty{
+    border-color: #FA787E;
+  }              

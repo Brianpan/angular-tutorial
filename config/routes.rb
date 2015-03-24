@@ -4,13 +4,17 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   resources :demographics
-  root 'demographics#index'
+ 
   get "twgeo" => "demographics#twgeo", as: "twgeo"
   get "testajax" => "demographics#testajax", as: "testajax"
-
-  get "projects" => "projects#index", as: "projects"
+  
+  resources :projects, except: [:show]
+  put "update_projects" => "projects#update", as: "update_projects"
+  root 'projects#index'
   get "form_details" => "projects#form_details", as: "form"
   get "project_list" => "projects#project_list", as: "project_list"
+  get '*path' => 'projects#index'
+  # get '*path' => 'projects#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

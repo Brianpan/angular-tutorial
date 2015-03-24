@@ -50,6 +50,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 ## angularjs
 gem 'angularjs-rails'
+gem 'angular-rails-templates'
+gem 'rack-cors', :require => 'rack/cors'
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
 

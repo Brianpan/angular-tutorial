@@ -14,18 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
-//= require skrollr
-//= require skrollr.ie
-//= require skrollr.menu
-//= require demographic/jquery.nicescroll.min
-//= require demographic/isotope.pkgd.min
-//= require demographic/jquery.scrollTo-1.4.3.1-min
-//= require demographic/jquery.localscroll-1.2.7-min
-//= require demographic/stellar
-//= require demographic/jquery.appear
-//= require demographic/validate
-//= require demographic/mosaic.1.0.1
-//= require topojson
-//= require demographic/d3.v3.min
+
 //= require angular 
-//= require_tree .
+//= require angular-route
+//= require angular-rails-templates
+//= require_tree ../angular
