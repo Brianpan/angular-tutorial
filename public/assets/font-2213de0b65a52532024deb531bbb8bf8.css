@@ -1,0 +1,7 @@
+@font-face {
+  font-family: "chunkfiveregular";
+  src: url(/assets/chunkfive-webfont-3265413c217300f188b111055efe5569.eot);
+  src: url(/assets/chunkfive-webfont-3265413c217300f188b111055efe5569.eot?#iefix) format("embedded-opentype"), url(/assets/chunkfive-webfont-9891d0676b0e1368596c7657365d3c27.woff) format("woff"), url(/assets/chunkfive-webfont-e735a3b17ce1c60e4c580a0e4cb7dc3c.ttf) format("truetype"), url(/assets/chunkfive-webfont-f423a20e796baab4470864486aa5be61.svg#chunkfiveregular) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}

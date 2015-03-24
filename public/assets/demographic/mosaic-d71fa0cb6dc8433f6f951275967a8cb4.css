@@ -1,0 +1,183 @@
+/*
+	Mosaic - Sliding Boxes and Captions jQuery Plugin
+	Version 1.0.1
+	www.buildinternet.com/project/mosaic
+	
+	By Sam Dunn / One Mighty Roar (www.onemightyroar.com)
+	Released under MIT License / GPL License
+*/
+/* line 11, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic/mosaic.scss */
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+/*General Mosaic Styles*/
+/*
+.mosaic-block {
+	float:left;
+	position:relative;
+	overflow:hidden;
+	margin:10px;
+	background:#111 image-url("progress.gif") no-repeat center center;
+}
+
+.mosaic-backdrop {
+	display:none;
+	position:absolute;
+	top:0;
+	height:100%;
+	width:100%;
+	background:#111;
+}
+
+.mosaic-overlay {
+	display:none;
+	z-index:5;
+	position:absolute;
+	width:100%;
+	height:100%;
+	background:#111;
+}
+*/
+/* line 49, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic/mosaic.scss */
+.mosaic-block {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff url(/images/progress.gif) no-repeat center center;
+  border: none;
+  box-sizing: border-box;
+  display: block !important;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+/* line 61, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic/mosaic.scss */
+.mosaic-block img {
+  margin: 0;
+  border: none;
+  width: 100%;
+  height: auto;
+}
+
+/* line 67, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic/mosaic.scss */
+.mosaic-backdrop {
+  display: none;
+  top: 0;
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  background: #fff;
+}
+
+/* line 75, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic/mosaic.scss */
+.mosaic-overlay {
+  display: none;
+  z-index: 5;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+/*** Custom Animation Styles (You can remove/add any styles below) ***/
+/* line 92, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic/mosaic.scss */
+.circle .mosaic-overlay {
+  background: url(/images/hover-magnify.png) no-repeat center center;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=00)";
+  filter: alpha(opacity=0);
+  display: none;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* line 101, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic/mosaic.scss */
+.circle .mosaic-overlay.link {
+  background: url(/images/hover-gotopost.png) no-repeat center center;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=00)";
+  filter: alpha(opacity=0);
+  display: none;
+}
+
+/* Fade Effect */
+/* line 111, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic/mosaic.scss */
+.fade .mosaic-overlay {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=00)";
+  filter: alpha(opacity=0);
+  background: url(/images/bg-black.png);
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* line 119, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic/mosaic.scss */
+.fade .mosaic-overlay * {
+  line-height: 140%;
+  margin: 0;
+}
+
+/* line 123, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic/mosaic.scss */
+.fade .mosaic-overlay .details {
+  position: absolute;
+  bottom: 50%;
+  margin-bottom: -20px;
+  text-align: center;
+  width: 100%;
+}
+
+/* Bar Effect */
+/* line 133, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic/mosaic.scss */
+.bar .mosaic-overlay {
+  bottom: -85px;
+  height: 85px;
+  background: url(/images/bg-black.png);
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 1em;
+}
+
+/* line 141, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic/mosaic.scss */
+.bar .mosaic-overlay * {
+  line-height: 140%;
+  margin: 0;
+}
+
+/* Bar Effect 2*/
+/* line 148, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic/mosaic.scss */
+.bar2 .mosaic-overlay {
+  bottom: -40px;
+  height: 85px;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  background: url(/images/bg-black.png);
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: .5em;
+}
+
+/* line 159, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic/mosaic.scss */
+.bar2 .mosaic-overlay:hover {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+}
+
+/* line 164, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic/mosaic.scss */
+.bar2 .mosaic-overlay * {
+  line-height: 150%;
+  margin: 0;
+}
+
+/* line 168, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic/mosaic.scss */
+.bar2 .mosaic-overlay .title {
+  margin-bottom: 5px;
+}
+
+/*** End Animation Styles ***/

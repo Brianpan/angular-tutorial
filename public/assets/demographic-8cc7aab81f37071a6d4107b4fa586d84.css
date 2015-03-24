@@ -1,0 +1,87 @@
+/* line 1, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic.scss */
+h3 {
+  font-style: "chunkfiveregular";
+}
+
+/* line 4, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic.scss */
+.btn {
+  border-radius: 0px;
+}
+
+/* line 7, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic.scss */
+.media {
+  min-height: 100px;
+}
+/* line 9, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic.scss */
+.media .btn-list {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/* line 15, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic.scss */
+article {
+  color: #000;
+}
+
+/* line 18, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic.scss */
+.contents {
+  position: absolute;
+  bottom: 20%;
+  width: 80%;
+  left: 10%;
+  background-color: #CEE3F6;
+  color: #fff;
+  padding: 5px 5px;
+  box-shadow: 1px 1px 2px #BDBDBD;
+}
+
+/* line 28, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic.scss */
+.mosaic-block {
+  height: 100%;
+  display: table;
+}
+
+/* line 32, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic.scss */
+.corner {
+  background: #000;
+  opacity: 0.6;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 5px 5px;
+}
+
+/* line 42, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic.scss */
+.tag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #000;
+  opacity: 0.6;
+  color: #fff;
+  padding: 5px 5px;
+}
+
+/* line 51, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic.scss */
+#tw-map {
+  height: 600px;
+  width: 800px;
+}
+
+/* line 55, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic.scss */
+path {
+  stroke-width: 0.5px;
+}
+
+/* line 58, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic.scss */
+.isotopeitem {
+  background-color: #fff;
+  box-shadow: 3px 3px 2px #BDBDBD;
+}
+
+/* line 63, /home/aniarc/projects/demographic/app/assets/stylesheets/demographic.scss */
+body {
+  background-color: #e9eaed;
+}
