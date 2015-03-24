@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-%html
-%head
-  %title Demographic
-  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-  = yield :morecss 
-  = javascript_include_tag :modernizr
-  = javascript_include_tag 'application', 'data-turbolinks-track' => true 
-  = yield :morejs
-  = javascript_include_tag :projects
-  = csrf_meta_tags
+%html{"ng-app" => "project"}
+  %head
+    %title Angular tutorial
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application' 
+    = javascript_include_tag :projects
+    = csrf_meta_tags
 
-%body{"ng-app" => "project"}
-  .container
-    = yield 
+  %body
+    .container
+      = yield 

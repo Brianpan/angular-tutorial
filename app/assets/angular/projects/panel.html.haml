@@ -1,50 +1,22 @@
-%section{"ng-controller" => "PanelController as panel", "ng-init" => "tab = 1"}
-  %ul.nav.nav-pills
-    %li{"ng-class" => "{active:panel.isTab(1)}"}
-      %a{href: "", "ng-click" => "panel.setTab(1)"}
-        List All
-    %li{"ng-class" => "{active:panel.isTab(2)}"}
-      %a{href: "", "ng-click" => "panel.setTab(2)"}
-        New
+.panel
+  %h3 Projects
   
-    
-  .panel{"ng-show" => "panel.isTab(1)"}
-    %h3 Projects
-    .pull-left
-      %input{type: "text", "ng-model" => "search", class: "form-control", placeholder: "Search"}
-    %table.table
+  %a{"ng-href" => "#/projects/new"}
+    .btn.btn-default  
+      New
+  .pull-left
+    %input{type: "text", "ng-model" => "search", class: "form-control", placeholder: "Search"}
+  %table.table
+    %tr
+      %th Name
+      %th URL
+      %th Power
+      %th Edit
+    %tbody{"ng-repeat" => "project in projects | filter:search | orderBy: 'name'"}
       %tr
-        %th Name
-        %th URL
-        %th Power
-        %th Edit
-      %tbody{"ng-repeat" => "project in projects | filter:search | orderBy: 'name'"}
-        %tr
-          %td {{project.name}}
-          %td {{project.url}}
-          %td {{project.power}}
-          %td 
-            %a{"ng-href" => "#/projects/edit/{{project.id}}"} click me
-  .panel{"ng-show" => "panel.isTab(2)"}
-    %h3 New Form
-    
-    .row
-      .col-md-8
-        %form{name: "projectForm", class: "horizontal-form", "ng-controller" => "NewController as new", "ng-submit" => "projectForm.$valid && new.addProject()"}
-          .form-group
-            %label Name
-            %input#name.form-control{name: "name", type: "text", required: true, "ng-model" => "new.project.name"}
-          .form-group
-            %label URL
-            %input#url.form-control{name: "url", type: "url", required: true, "ng-model" => "new.project.url"}
-          .form-group
-            %label Power
-            %input#power.form-control{name: "power", type: "text", required: true, "ng-model" => "new.project.power"}
-          .pull-right
-            %input{type: "submit", name: "submit", value: "submit", class: "btn btn-success", "ng-click" => "panel.setTab(1)"}
+        %td {{project.name}}
+        %td {{project.url}}
+        %td {{project.power}}
+        %td 
+          %a{"ng-href" => "#/projects/edit/{{project.id}}"} click me
             
-
-:css
-  .ng-invalid.ng-dirty{
-    border-color: #FA787E;
-  }              
