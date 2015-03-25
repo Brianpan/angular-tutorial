@@ -3,11 +3,6 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  resources :demographics
- 
-  get "twgeo" => "demographics#twgeo", as: "twgeo"
-  get "testajax" => "demographics#testajax", as: "testajax"
-   
   resources :projects, only: [:index]
   get "project_list" => "projects#project_list", as: "project_list"
   root 'projects#index'
