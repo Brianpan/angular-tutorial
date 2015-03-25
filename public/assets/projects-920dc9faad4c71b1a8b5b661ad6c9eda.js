@@ -67,21 +67,20 @@
   app.controller("EditController", function($scope, $http, $location, $routeParams){
     $scope.project = {};
     var projectId = parseInt($routeParams.projectID);
-    if(!$scope.projects){
+    if($scope.projects){
+      var projects = $scope.projects;
+      alert("?");
+    }else{
       $http.get('/api/project_list.json').success(function(data){
+        alert("!");
         $scope.projects = data.projects;
         $scope.count = data.projects.length;
-        var projects = $scope.projects;
-        var target = $.grep(projects, function(e){return e.id == projectId})[0];
-        var index = projects.indexOf(target);
-        $scope.project = target;
       });
-    }else{
-      var projects = $scope.projects;
-      var target = $.grep(projects, function(e){return e.id == projectId})[0];
-      var index = projects.indexOf(target);
-      $scope.project = target;
     }
+    // var target = $.grep(projects, function(e){return e.id == projectId})[0];
+    // var index = projects.indexOf(target);
+    
+    // $scope.project = target;
     
     $scope.editProject = function(){
       
