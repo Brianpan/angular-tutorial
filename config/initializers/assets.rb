@@ -13,4 +13,5 @@ Rails.application.config.assets.precompile += %w(
 	projects.js
 	routes.js
 	controllers/*
+	services/
 	)

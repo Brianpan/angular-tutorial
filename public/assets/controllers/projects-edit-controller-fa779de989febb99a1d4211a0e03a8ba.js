@@ -35,7 +35,11 @@ app.controller("EditController", function($scope, $http, $location, $routeParams
     ///destroy function
     $scope.destroyProject = function(){
       $scope.projects.splice(index, 1);
-      Action.delete('api/projects/' + String(projectId)).then(function(data){
+      $.ajax({
+        type: "DELETE",
+        contentType: "application/json",
+        url: 'api/projects/' + String(projectId)
+      }).then(function(data){
         $location.path("/");
         $scope.$apply();
       });
